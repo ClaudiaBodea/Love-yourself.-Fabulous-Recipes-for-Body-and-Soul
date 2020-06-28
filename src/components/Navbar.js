@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import logo from "../images/logo.png";
 import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import { RecipeContext } from "../context";
 
 export default class Navbar extends Component {
@@ -16,7 +15,8 @@ export default class Navbar extends Component {
   static contextType = RecipeContext;
 
   render() {
-    let { recipes } = this.context;
+    let { recipes, others } = this.context;
+
     return (
       <nav className="navbar">
         <div className="nav-center">
@@ -36,10 +36,13 @@ export default class Navbar extends Component {
             className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
           >
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">❤Home</Link>
             </li>
             <li>
               <Link to="/recipes">Recipes:{recipes.length}</Link>
+            </li>
+            <li>
+              <Link to="/others">Other recipes{others}</Link>
             </li>
           </ul>
         </div>
@@ -47,23 +50,3 @@ export default class Navbar extends Component {
     );
   }
 }
-
-// import React, { useContext } from "react";
-// import "./App.css";
-// import { RecipeContext } from "./RecipeContext";
-
-// const Nav = () => {
-//   const [recipes, setRecipes] = useContext(RecipeContext);
-
-//   const navStyle = {
-//     color: "white",
-//   };
-//   return (
-//     <nav>
-//       <h3>Claudia Bodea</h3>
-//       <p className="nav-links">List of Recipes: {recipes.length}</p>
-//     </nav>
-//   );
-// };
-
-// export default Nav;

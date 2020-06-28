@@ -1,153 +1,155 @@
-import recipe1 from "./images/details-1.jpg";
-import recipe2 from "./images/details-2.jpg";
-import recipe3 from "./images/details-3.jpg";
-import recipe4 from "./images/details-4.jpg";
-import img1 from "./images/recipe-1.jpg";
-import img2 from "./images/recipe-2.jpg";
-import img3 from "./images/recipe-3.jpg";
-import img4 from "./images/recipe-4.jpg";
-import img5 from "./images/recipe-5.jpg";
-import img6 from "./images/recipe-6.jpg";
-import img7 from "./images/recipe-7.jpg";
-import img8 from "./images/recipe-8.jpg";
-import img9 from "./images/recipe-9.jpg";
-import img10 from "./images/recipe-10.jpg";
-import img11 from "./images/recipe-11.jpg";
-import img12 from "./images/recipe-12.jpg";
-import img13 from "./images/recipe-13.jpg";
-import img14 from "./images/recipe-14.jpg";
-import img15 from "./images/recipe-15.jpg";
-import img16 from "./images/recipe-16.jpg";
+// import recipe1 from "./images/details-1.jpg";
+// import recipe2 from "./images/details-2.jpg";
+// import recipe3 from "./images/details-3.jpg";
+// import recipe4 from "./images/details-4.jpg";
+// import img1 from "./images/recipe-1.jpg";
+// import img2 from "./images/recipe-2.jpg";
+// import img3 from "./images/recipe-3.jpg";
+// import img4 from "./images/recipe-4.jpg";
+// import img5 from "./images/recipe-5.jpg";
+// import img6 from "./images/recipe-6.jpg";
+// import img7 from "./images/recipe-7.jpg";
+// import img8 from "./images/recipe-8.jpg";
+// import img9 from "./images/recipe-9.jpg";
+// import img10 from "./images/recipe-10.jpg";
+// import img11 from "./images/recipe-11.jpg";
+// import img12 from "./images/recipe-12.jpg";
+// import img13 from "./images/recipe-13.jpg";
+// import img14 from "./images/recipe-14.jpg";
+// import img15 from "./images/recipe-15.jpg";
+// import img16 from "./images/recipe-16.jpg";
 
-export default [
-  {
-    id: "1",
-    name: "Cheesy mushrooms",
-    slug: "Mushrooms-with-parsley-and-blue-cheese",
-    cooktime: 1,
-    difficulty: "easy",
-    // calories: 1400,
-    featured: true,
-    gluten: true,
-    lowcarb: true,
-    description:
-      "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
-    images: [img16, recipe1, recipe2, recipe3],
-    ingredients: [
-      {
-        ingred_name: "mushroms",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "35.0",
-      },
-      {
-        ingred_name: "cheese",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "314.0",
-      },
-      {
-        ingred_name: "oregano",
-        quantity: "2",
-        unit_name: "gr",
-        calories: "306.0",
-      },
-    ],
-  },
-  {
-    id: "2",
-    name: "Colored sandwich",
-    slug: "Ham-and-rucola-sandwich",
-    cooktime: 3,
-    difficulty: "medium",
-    // calories: 1200,
-    featured: true,
-    lowcarb: false,
-    gluten: true,
-    description:
-      "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
-    images: [img2, recipe1, recipe3, recipe4],
-    // images: "recipe-2.jpg, details-1.jpg, details-3.jpg, details-4.jpg",
-    // images: "recipe-2.jpg",
-    // images: img2,
-    // ingredients: ["yogurt", "strawberries", "honey"],
-    ingredients: [
-      {
-        ingred_name: "mushroms",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "35.0",
-      },
-      {
-        ingred_name: "cheese",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "314.0",
-      },
-      {
-        ingred_name: "oregano",
-        quantity: "2",
-        unit_name: "gr",
-        calories: "306.0",
-      },
-    ],
-  },
-  {
-    id: "16",
-    name: "Elderflowers plate",
-    slug: "Mushrooms",
-    cooktime: 2,
-    difficulty: "master-chef",
-    // calories: 1560,
-    featured: true,
-    lowfat: true,
-    gluten: false,
-    description:
-      "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
-    images: [img16, recipe2, recipe3, recipe4],
-    // images: "recipe-16.jpg, details-3.jpg, details-4.jpg, details-2.jpg",
-    // images: "recipe-16.jpg",
-    // images: img1,
-    // ingredients: ["ham", "bread", "butter", "rucola"],
-    ingredients: [
-      {
-        ingred_name: "mushroms",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "35.0",
-      },
-      {
-        ingred_name: "cheese",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "314.0",
-      },
-      {
-        ingred_name: "oregano",
-        quantity: "2",
-        unit_name: "gr",
-        calories: "306.0",
-      },
-      {
-        ingred_name: "mushroms",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "35.0",
-      },
-      {
-        ingred_name: "cheese",
-        quantity: "350",
-        unit_name: "gr",
-        calories: "314.0",
-      },
-      {
-        ingred_name: "oregano",
-        quantity: "2",
-        unit_name: "gr",
-        calories: "306.0",
-      },
-    ],
-  },
+// export default [
+    [
+{
+  "id": "1",
+  "name": "Cheesy mushrooms",
+  "slug": "Mushrooms-with-parsley-and-blue-cheese",
+  "cooktime": 1,
+  "difficulty": "easy",
+  // calories: 1400,
+  "featured": true,
+  "gluten": true,
+  "lowcarb": true,
+  "description": "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
+  "images": [img1, recipe1, recipe2, recipe3],
+  // images: "recipe-1.jpg, details-1.jpg, details-2.jpg, details-3.jpg",
+  // images: "recipe-1.jpg",
+  // images: img1,
+  // ingredients: ["peer", "brown sugar", "butter"],
+  "ingredients": [
+    {
+      "ingred_name": "mushroms",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "35.0"
+    },
+    {
+      "ingred_name": "cheese",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "314.0"
+    },
+    {
+      "ingred_name": "oregano",
+      "quantity": "2",
+      "unit_name": "gr",
+      "calories": "306.0"
+    }
+  ]
+},
+{
+  "id": "2",
+  "name": "Colored sandwich",
+  "slug": "Ham-and-rucola-sandwich",
+  "cooktime": 3,
+  "difficulty": "medium",
+  // calories: 1200,
+  "featured": true,
+  "lowcarb": false,
+  "gluten": true,
+  "description": "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
+  "images": [img2, recipe1, recipe3, recipe4],
+  // images: "recipe-2.jpg, details-1.jpg, details-3.jpg, details-4.jpg",
+  // images: "recipe-2.jpg",
+  // images: img2,
+  // ingredients: ["yogurt", "strawberries", "honey"],
+  "ingredients": [
+    {
+      "ingred_name": "mushroms",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "35.0"
+    },
+    {
+      "ingred_name": "cheese",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "314.0"
+    },
+    {
+      "ingred_name": "oregano",
+      "quantity": "2",
+      "unit_name": "gr",
+      "calories": "306.0"
+    }
+  ]
+},
+{
+  "id": "16",
+  "name": "Elderflowers plate",
+  "slug": "Mushrooms",
+  "cooktime": 2,
+  "difficulty": "master-chef",
+  // calories: 1560,
+  "featured": true,
+  "lowfat": true,
+  "gluten": false,
+  "description": "Street art edison bulb gluten-free, tofu try-hard lumbersexual brooklyn tattooed pickled chambray. Actually humblebrag next level, deep v art party wolf tofu direct trade readymade sustainable hell of banjo. Organic authentic subway tile cliche palo santo, street art XOXO dreamcatcher retro sriracha portland air plant kitsch stumptown. Austin small batch squid gastropub. Pabst pug tumblr gochujang offal retro cloud bread bushwick semiotics before they sold out sartorial literally mlkshk. Vaporware hashtag vice, sartorial before they sold out pok pok health goth trust fund cray.",
+  "images": [img16, recipe2, recipe3, recipe4],
+  // images: "recipe-16.jpg, details-3.jpg, details-4.jpg, details-2.jpg",
+  // images: "recipe-16.jpg",
+  // images: img1,
+  // ingredients: ["ham", "bread", "butter", "rucola"],
+  "ingredients": [
+    {
+      "ingred_name": "mushroms",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "35.0"
+    },
+    {
+      "ingred_name": "cheese",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "314.0"
+    },
+    {
+      "ingred_name": "oregano",
+      "quantity": "2",
+      "unit_name": "gr",
+      "calories": "306.0"
+    },
+    {
+      "ingred_name": "mushroms",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "35.0"
+    },
+    {
+      "ingred_name": "cheese",
+      "quantity": "350",
+      "unit_name": "gr",
+      "calories": "314.0"
+    },
+    {
+      "ingred_name": "oregano",
+      "quantity": "2",
+      "unit_name": "gr",
+      "calories": "306.0"
+    }
+  ]
+})
 ];
 
 // export default [

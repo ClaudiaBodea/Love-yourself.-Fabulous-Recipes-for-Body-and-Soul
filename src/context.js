@@ -1,7 +1,27 @@
 import React, { Component } from "react";
-import items from "./data";
+// import items from "./data";
+import details1 from "./images/details-1.jpg";
+import details2 from "./images/details-2.jpg";
+import details3 from "./images/details-3.jpg";
+import img1 from "./images/recipe-1.jpg";
+import img2 from "./images/recipe-2.jpg";
+import img3 from "./images/recipe-3.jpg";
+import img4 from "./images/recipe-4.jpg";
+import img5 from "./images/recipe-5.jpg";
+import img6 from "./images/recipe-6.jpg";
+import img7 from "./images/recipe-7.jpg";
+import img8 from "./images/recipe-8.jpg";
+import img9 from "./images/recipe-9.jpg";
+import img10 from "./images/recipe-10.jpg";
+import img11 from "./images/recipe-11.jpg";
+import img12 from "./images/recipe-12.jpg";
+import img13 from "./images/recipe-13.jpg";
+import img14 from "./images/recipe-14.jpg";
+import img15 from "./images/recipe-15.jpg";
+import img16 from "./images/recipe-16.jpg";
 
 const RecipeContext = React.createContext();
+const url = "http://localhost/meal_plan/api/rest.php";
 
 export default class RecipeProvider extends Component {
   state = {
@@ -19,30 +39,65 @@ export default class RecipeProvider extends Component {
     gluten: false,
   };
 
-  //getData
+  //   getData;
+  getData = async () => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((items) => {
+        console.log(items);
+
+        let recipes = this.formatData(items);
+        let featuredRecipes = recipes.filter(
+          (recipe) => recipe.featured === true
+        );
+        let maxCal = Math.max(...recipes.map((item) => item.calories));
+        let maxCook = Math.max(...recipes.map((item) => item.cooktime));
+
+        this.setState({
+          recipes,
+          featuredRecipes,
+          sortedRecipes: recipes,
+          loading: false,
+          calories: maxCal,
+          maxCal,
+          maxCook,
+        });
+      });
+
+    //   .catch((error) => console.log("Request failed", error));
+  };
 
   componentDidMount() {
-    //this.getData
-    let recipes = this.formatData(items);
-    // console.log(items);
-    let featuredRecipes = recipes.filter((recipe) => recipe.featured === true);
-    let maxCal = Math.max(...recipes.map((item) => item.calories));
-    let maxCook = Math.max(...recipes.map((item) => item.cooktime));
-
-    this.setState({
-      recipes,
-      featuredRecipes,
-      sortedRecipes: recipes,
-      loading: false,
-      calories: maxCal,
-      maxCal,
-      maxCook,
-    });
+    this.getData();
   }
 
   formatData(items) {
+    const imagesList = [
+      img1,
+      img2,
+      img3,
+      img4,
+      img5,
+      img6,
+      img7,
+      img8,
+      img9,
+      img10,
+      img11,
+      img12,
+      img13,
+      img14,
+      img15,
+      img16,
+    ];
     let tempItems = items.map((item) => {
-      let id = item.id;
+      let id = item.receipe_id;
+      item.images = [imagesList[id - 1], details1, details2, details3];
+
+      item.featured = item.featured === "0" ? false : true;
+      item.lowcarb = item.lowcarb === "0" ? false : true;
+      item.gluten = item.gluten === "0" ? false : true;
+
       let images = item.images;
       let ingred_name = item.ingredients.map(
         (ingredient) => ingredient.ingred_name
@@ -51,27 +106,14 @@ export default class RecipeProvider extends Component {
       let unit_name = item.ingredients.map(
         (ingredient) => ingredient.unit_name
       );
-      let calories = item.ingredients.map((ingredient) => ingredient.calories);
-
-      //   calories.reduce(
-      //     (ingredient) => calories + parseInt(ingredient.calories),
-      //     2
-      //   );
-
-      console.log(calories);
-
-      //   let totalCal = 0;
-      //   calories.forEach(addCal);
-      //   function addCal(calories) {
-      //     totalCal += calories;
-      //   }
-
-      //     var array = [1, 2, 3, 4, 5];
-      //     // Getting sum of numbers
-      //     var sum = array.reduce(function(a, b){
-      //         return a + b;
-      //     }, 0);
-      //     console.log(sum); // Prints: 15
+      let caloriesList = item.ingredients.map(
+        (ingredient) => ingredient.calories
+      );
+      let calories = caloriesList.reduce(function (a, b) {
+        return parseInt(a) + parseInt(b);
+      }, 0);
+      //   console.log(caloriesList);
+      //   console.log(calories);
 
       let recipe = {
         ...item,
@@ -123,7 +165,7 @@ export default class RecipeProvider extends Component {
 
     //transform cooktime back to number from string
     // cooktime = parseInt(cooktime);
-    calories = parseInt(calories);
+    // calories = parseInt(calories);
 
     //filter by difficulty type
     if (difficulty !== "all") {
@@ -184,41 +226,3 @@ export function withRecipeConsumer(Component) {
 }
 
 export { RecipeProvider, RecipeConsumer, RecipeContext };
-
-// import React, { useState, createContext } from "react";
-
-// export const RecipeContext = createContext();
-
-// export const RecipeProvider = (props) => {
-//   const [recipes, setRecipes] = useState([
-//     {
-//       name: "Mushrooms with blue cheese",
-//       cooktime: "medium",
-//       difficulty: "easy",
-//       id: 1,
-//     },
-//     {
-//       name: "Ham and rucola sandwich",
-//       cooktime: "quick",
-//       difficulty: "easy",
-//       id: 2,
-//     },
-//     {
-//       name: "Yogurt dream",
-//       cooktime: "quick",
-//       difficulty: "medium",
-//       id: 3,
-//     },
-//     {
-//       name: "Peer puree",
-//       cooktime: "worth-waiting-for",
-//       difficulty: "master-chef",
-//       id: 4,
-//     },
-//   ]);
-//   return (
-//     <RecipeContext.Provider value={[recipes, setRecipes]}>
-//       {props.children}
-//     </RecipeContext.Provider>
-//   );
-// };

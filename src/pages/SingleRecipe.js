@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import defaultBcg from "../images/recipe-4.jpg";
+import defaultRecp from "../images/recipe-11.jpg";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ export default class SingleRecipe extends Component {
     // console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
-      defaultBcg,
+      defaultRecp,
     };
   }
   static contextType = RecipeContext;
@@ -50,7 +50,7 @@ export default class SingleRecipe extends Component {
 
     return (
       <>
-        <StyledHero img={mainImg || this.state.defaultBcg}>
+        <StyledHero img={mainImg || this.state.defaultRecp}>
           <Banner title={`${name} recipe`}>
             <Link to="/recipes" className="btn-primary">
               back to recipes
@@ -117,19 +117,3 @@ export default class SingleRecipe extends Component {
     );
   }
 }
-
-// Recipe
-
-// import React from "react";
-
-// const Recipe = ({ name, cooktime, difficulty }) => {
-//   return (
-//     <div>
-//       <h3>{name}</h3>
-//       <p>{cooktime}</p>
-//       <p>{difficulty}</p>
-//     </div>
-//   );
-// };
-
-// export default Recipe;
